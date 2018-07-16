@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "With the midterm module in the merval, we are creating a command line interface to display information within the Marvel API.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Romero, Gonzalo Serrano, Zolangi Ramirez, Davis Louie, Benjamin Valadez",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "midterm": "file:../merval",
+    "superagent": "^3.8.2",
+    "yargs": "^11.0.0"
+  }
+}

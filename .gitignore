@@ -1,0 +1,6 @@
+node_modules/
+keys/
+package-lock.json
+
+#sublime text rules set
+.eslintrc
