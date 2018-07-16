@@ -29,5 +29,13 @@ Port 8082 is where the websockets are.
 
 ### Team Members
 - Aaron Romero
-- 
+- Davis Louie
+- Gonzalo Serrano
+- Zolangi Ramirez
+
+### Technologies Used:
+- Javascript, HTML 5, CSS (Bulma)
+-Node.js server (Express), Web Sockets
+-Vue.js
+
 
