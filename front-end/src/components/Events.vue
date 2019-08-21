@@ -21,10 +21,25 @@
           </div>
         </article>
 
-        <div id="event-results" class="select is-multiple" v-show="search" v-if="!searching && !emptyResults">
+        <!-- <div id="event-results" class="select is-multiple" v-show="search" v-if="!searching && !emptyResults">
             <select multiple size="5">
                 <option v-for="info in eventInfo.results" :key="info.id" @click="getEventInfo(info)">{{info.title}}</option>
             </select>
+        </div> -->
+
+         <div class="search-results" v-show="search" v-if="!searching && !emptyResults">
+          <div class="tile is-ancestor">
+            <div class="tile is-12 is-vertical is-parent">
+              <div class="tile is-child box" v-for="info in eventInfo.results" :key="info.id" >
+                <div id="event-names" class="title">
+                  <div @click="getEventInfo(info)">
+                    <p>{{info.title}}</p>
+                    <img id="event_art" :src="info.thumbnail.path + '.' + info.thumbnail.extension">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div v-if="eventResults">
@@ -50,7 +65,7 @@
               </div>
             </div>
           </div>
-          <button id="new-search-button" class="button is-primary" @click="newEventSearch()">Search </button>
+          <button id="new-search-button" class="button is-primary" @click="newEventSearch()">New Search</button>
         </div>
     </div>
 </template>
@@ -181,9 +196,19 @@ ul {
   margin-bottom: 1em;
 }
 
+#event_art{
+  width: 20vw;
+}
+
 #event-results select option:hover {
   background-color: black;
   color: white;
+}
+
+#event-names:hover {
+  color: gray;
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 #event-button {
