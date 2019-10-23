@@ -6,7 +6,7 @@ const
 const
     app = express(),
     app2 = express(),
-    server = require('http').Server(app2)
+    server = require('https').Server(app2)
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")
