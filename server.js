@@ -7,11 +7,11 @@ const
     app = express(),
     app2 = express(),
     // server = require('https').Server(app2)
-    server = app2.listen(3000)
+    server = app2.listen(8082)
     io = require('socket.io').listen(server);
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Origin", "http://localhost:8082")
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     next()
