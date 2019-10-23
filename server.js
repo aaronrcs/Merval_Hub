@@ -7,7 +7,7 @@ const
     app = express(),
     app2 = express(),
     // server = require('https').Server(app2)
-    server = app.listen(8082)
+    server = app2.listen(3000)
     io = require('socket.io').listen(server);
 
 app.use(function (req, res, next) {
