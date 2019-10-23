@@ -15,22 +15,22 @@ app.use(function (req, res, next) {
 })
 
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, '..', '/front-end')))
+app.use(express.static(path.join(__dirname, '.', '/front-end')))
 
 app.use(require('./api/routes')())
 
 // Code for production
 // if(process.env.NODE_ENV === 'production'){
     // Set static path
-    app.use(express.static(__dirname + '/dist/'))
+    // app.use(express.static(__dirname + '/dist/'))
 
     // redirecting to index.html to display our project
-    app.get(/.*/,(req,res) => res.sendFile(__dirname + '/dist/index.html'))
+    // app.get(/.*/,(req,res) => res.sendFile(__dirname + '/dist/index.html'))
 // }
 app.listen(8080, () => {
     console.log('Server is running')
 })
 
-app2.use(express.static(path.join(__dirname, '..', '/front-end')))
+app2.use(express.static(path.join(__dirname, '.', '/front-end')))
 require('./sockets')(server)
 server.listen(8082)
