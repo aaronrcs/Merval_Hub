@@ -27,9 +27,10 @@ if(process.env.NODE_ENV === 'production'){
     // redirecting to index.html to display our project
     app.get(/.*/,(req,res) => res.sendFile(__dirname + '/dist/index.html'))
 }
-app.listen(8080, () => {
-    console.log('Server is running')
-})
+// app.listen(8080, () => {
+//     console.log('Server is running')
+// })
+app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
 require('./sockets')(server)
