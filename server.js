@@ -6,13 +6,14 @@ const
 const
     app = express(),
     app2 = express(),
-    server = require('http').Server(app2)
+    // server = require('http').Server(app2)
+    server = app2.listen(8082);
 
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*")
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-//     next()
-// })
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    next()
+})
 
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '.', '/front-end')))
@@ -37,4 +38,4 @@ app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
 require('./sockets')(server)
-server.listen(8082)
+// server.listen(8082)
