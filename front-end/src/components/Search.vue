@@ -1,6 +1,9 @@
 <template>
   <div class="search">
-    <h1><strong>{{ welcome_message }}</strong></h1>
+      <h1>
+        <strong>{{ welcome_message }}</strong>
+      </h1>
+      <h2>{{ subMessage }}</h2>
 
     <hr>
     <div class="columns">
@@ -31,7 +34,8 @@ export default {
   name: "search",
   data() {
     return {
-      welcome_message: "Welcome to the Merval App",
+      welcome_message: "Welcome to the Marvel Catelog",
+      subMessage:"Use the drop down menu down below to search all things Marvel (e.g Comics, Comic Book Characters, etc.)",
       searchOpt: ""
     };
   },

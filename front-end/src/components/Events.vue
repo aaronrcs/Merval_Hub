@@ -216,12 +216,17 @@ ul {
 }
 
 #result-container {
-  margin-left: 200px;
+  background: #e26868;
+  width: 73vw;
 }
 
-#event-descr, #event-comics {
+#event-descr {
   float: right;
   margin-left: 100px;
+}
+
+.event-comics{
+  margin-left: 11%;
 }
 
 #error {
@@ -244,5 +249,16 @@ ul {
 
 #new-search-button:hover {
   color: gray;
+}
+/* Media Queries: */
+@media (max-width: 1000px) {
+    #result-container {
+      width: 73vw;
+  }
+}
+@media (max-width: 800px) and (min-width: 350px) {
+    #result-container {
+      width: 100vw;
+  }
 }
 </style>

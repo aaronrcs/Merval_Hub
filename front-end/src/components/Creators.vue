@@ -196,7 +196,8 @@ a {
 }
 
 #result-container {
-  margin-left: 200px;
+  background: #e26868;
+  width: 72vw;
 }
 
 .input {
@@ -204,8 +205,7 @@ a {
 }
 
 #character-comics {
-  float: right;
-  margin-left: 100px;
+  margin-left: 11%;
 }
 
 #error {
@@ -241,5 +241,16 @@ a {
 
 .button{
 	background-color: blue;
+}
+/* Media Queries: */
+@media (max-width: 1000px) {
+    #result-container {
+      width: 73vw;
+  }
+}
+@media (max-width: 800px) and (min-width: 350px) {
+    #result-container {
+      width: 100vw;
+  }
 }
 </style>

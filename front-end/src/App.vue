@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/marvel_logo.png" height="8%" width="8%">
+    <img id="logo" src="./assets/marvel_logo.png">
     <router-view/>
   </div>
 </template>
@@ -19,5 +19,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#logo{
+  width:21vw;
 }
 </style>

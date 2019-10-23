@@ -33,6 +33,10 @@ export default {
 
 <style scoped>
 .box:hover {
-  background-color: lightgray;
+  background-color: rgb(111, 109, 109);
+}
+.box{
+    background: #585757;
+    color: white;
 }
 </style>
