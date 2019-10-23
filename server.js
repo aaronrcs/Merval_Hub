@@ -9,12 +9,12 @@ const
 //     server = require('http').Server(app2)
 //     io = require('socket.io')(server)
 
-var express = require('express'),
+const express = require('express'),
     http = require('http');
-var app = express();
-var app2 = express();
-var server = http.createServer(app2);
-var io = require('socket.io').listen(server);
+    app = express();
+    app2 = express();
+    server = http.createServer(app2);
+    io = require('socket.io').listen(server);
 
 server.listen(8082);
 
