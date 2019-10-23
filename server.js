@@ -6,7 +6,9 @@ const
 const
     app = express(),
     app2 = express(),
-    server = require('https').Server(app2)
+    // server = require('https').Server(app2)
+    server = app2.listen(8082)
+    io = require('socket.io').listen(server);
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")
@@ -14,6 +16,21 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     next()
 })
+
+
+    const prevQueries = []
+
+    io.on('connection', socket => {
+
+        // Syncing the queries list in the root
+        socket.emit('refreshQueries', prevQueries)
+
+        // Adding the new queries to the list
+        socket.on('addQuery', data => {
+            prevQueries.push(data)
+            io.emit('successfulQuery', data)
+        })
+    })
 
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '.', '/front-end')))
@@ -34,5 +51,5 @@ if(process.env.NODE_ENV === 'production'){
 app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
-require('./sockets')(server)
-server.listen(8082)
+// require('./sockets')(server)
+// server.listen(8082)
