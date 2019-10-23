@@ -16,7 +16,7 @@ var app2 = express();
 var server = http.createServer(app2);
 var io = require('socket.io').listen(server);
 
-server.listen(3000);
+server.listen(8082);
 
 
 
@@ -63,5 +63,5 @@ if(process.env.NODE_ENV === 'production'){
 app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
-require('./sockets')(server)
-server.listen(8082)
+// require('./sockets')(server)
+// server.listen(8082)
