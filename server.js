@@ -37,7 +37,7 @@ if(process.env.NODE_ENV === 'production'){
 // })
 
 // For production
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 8080);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
 require('./sockets')(server)
