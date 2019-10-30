@@ -1,7 +1,6 @@
-module.exports = () => {
+module.exports = (server) => {
     const
-        // io = require('socket.io').listen(server)
-        io = require('socket.io')
+        io = require('socket.io').listen(server)
 
     const prevQueries = []
 
