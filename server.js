@@ -4,7 +4,7 @@ const
     path = require('path'),
     cors = require('cors')
 let portSocket = process.env.PORT || 8082;
-let portServer = process.env.PORT || 8080;
+let portServer = process.env.PORT || 8081;
 const
     app = express(),
     app2 = express()
