@@ -32,12 +32,12 @@ app.use(require('./api/routes')())
     app.get(/.*/,(req,res) => res.sendFile(__dirname + '/dist/index.html'))
 // }
 // For tesing locally
-app.listen(process.env.PORT || 8080, () => {
-    console.log('Server is running');
-})
+// app.listen(process.env.PORT || 8080, () => {
+//     console.log('Server is running');
+// })
 
 // For production
-// app.listen(process.env.PORT);
+app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
 require('./sockets')(server)
