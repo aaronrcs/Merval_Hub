@@ -3,12 +3,13 @@ const
     express = require('express'),
     path = require('path'),
     cors = require('cors')
-
+let portSocket = process.env.PORT || 8082;
+// let portServer = process.env.PORT || 8080;
 const
     app = express(),
     app2 = express()
     // server = require('http').Server(app2)
-    // server = app.listen(8082);
+    server = app2.listen(portSocket);
 
 // app.use(cors())
 app.use(function (req, res, next) {
@@ -31,13 +32,13 @@ if(process.env.NODE_ENV === 'production'){
     app.get(/.*/,(req,res) => res.sendFile(__dirname + '/dist/index.html'))
 }
 // For tesing locally
-// app.listen(8080, () => {
-//     console.log('Server is running')
-// })
+app.listen(8080, () => {
+    console.log('Server is running')
+})
 
 // For production
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
-// require('./sockets')(server)
+require('./sockets')(server)
 // server.listen(8082)
