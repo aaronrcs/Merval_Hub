@@ -1,4 +1,4 @@
-module.exports = (server) => {
+module.exports = () => {
     const
         // io = require('socket.io').listen(server)
         io = require('socket.io')
