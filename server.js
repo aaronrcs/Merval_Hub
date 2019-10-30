@@ -3,7 +3,7 @@ const
     express = require('express'),
     path = require('path'),
     cors = require('cors')
-let portSocket = process.env.PORT || 8082;
+let portSocket = 8082;
 // let portServer = process.env.PORT || 8080;
 const
     app = express(),
