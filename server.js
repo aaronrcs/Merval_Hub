@@ -3,13 +3,13 @@ const
     express = require('express'),
     path = require('path'),
     cors = require('cors')
-let portSocket = 8082;
+// let portSocket = 8082;
 
 const
     app = express(),
     app2 = express()
     // server = require('http').Server(app2)
-    server = app2.listen(portSocket);
+    // server = app2.listen(portSocket);
 
 // app.use(cors())
 app.use(function (req, res, next) {
@@ -42,5 +42,5 @@ app.listen(process.env.PORT || 8080, () => {
 // app.listen(process.env.PORT);
 
 app2.use(express.static(path.join(__dirname, '.', '/front-end')))
-require('./sockets')(server)
+// require('./sockets')(server)
 // server.listen(8082)
