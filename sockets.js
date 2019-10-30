@@ -1,6 +1,6 @@
 module.exports = (server) => {
     const
-        io = require('socket.io').listen(server)(require('http'), { path: '/napi' })
+        io = require('socket.io').listen(server)
 
     const prevQueries = []
 
