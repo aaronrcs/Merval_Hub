@@ -5,21 +5,14 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "concurrently": "^5.0.0",
-    "cors": "^2.8.5",
     "express": "^4.16.3",
-    "midterm": "file:./merval",
+    "midterm": "file:../merval",
     "socket.io": "^2.1.0"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.4"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon server",
-    "client": "npm run serve --prefix front-end",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node server.js"
   },
   "author": "Gonzalo, Aaron, Davis, and Zoe",
   "license": "MIT"
